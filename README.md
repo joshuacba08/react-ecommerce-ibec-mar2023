@@ -9,8 +9,17 @@ React eCommerce es un proyecto basado en React JS y estila usando Tailwind css y
 
 
 
-## Clonar el repositorio
+## Instalar proyecto
 
 ```shell
-git clone 
+git clone https://github.com/joshuacba08/react-ecommerce-ibec-mar2023.git
+cd react-ecommerce-ibec-mar2023
+npm install
+```
+
+
+## Arrancar proyecto
+
+```shell
+npm run dev
 ```
