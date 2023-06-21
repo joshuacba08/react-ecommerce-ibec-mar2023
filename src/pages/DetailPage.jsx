@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const DetailPage = () => {
 
-    URL = 'https://run.mocky.io/v3/945ebc53-6e6c-458f-a54d-78c637ac6d54';// URL de la API
+    const url = 'https://run.mocky.io/v3/945ebc53-6e6c-458f-a54d-78c637ac6d54';// URL de la API
     const { id } = useParams(); // Hook que devuelve un objeto con los parametros de la ruta dinamica
     console.log(id);
 
@@ -16,7 +16,7 @@ const DetailPage = () => {
     // implementamos un useEffect para hacer la peticion a la API
     useEffect( ()=>{
 
-        fetch(URL)
+        fetch(url)
             .then( response => response.json() )
             .then( data => {
                 // data es el contenido del body parseado como objeto literal
@@ -44,7 +44,7 @@ const DetailPage = () => {
             : <h6>Cargando producto...</h6>
         }
 
-        <Button color="blue" onClick={ ()=> navigate('') }>Volver</Button>
+        <Button color="blue" onClick={ ()=> navigate('/products') }>Volver</Button>
     </div>
   )
 }

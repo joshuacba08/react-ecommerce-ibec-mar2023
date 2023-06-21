@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { propTypeChildren } from "@material-tailwind/react/types/components/timeline";
 
 import { Link } from "react-router-dom";
 
@@ -46,5 +47,6 @@ const Item = ({ product }) => {
     </Card>
   );
 };
+
 
 export default Item;

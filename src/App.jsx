@@ -10,6 +10,8 @@ import DetailPage from "./pages/DetailPage";
 
 
 const BrowserRouter = createBrowserRouter([
+  // Aqui van las rutas de la aplicacion
+  // ruta exacta
   {
     path: "/",
     element: <Home />,
