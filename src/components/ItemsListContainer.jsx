@@ -13,7 +13,7 @@ const ItemsListContainer = () => {
           .then( response => response.json() ) // response.json() devuelve una promesa que se resuelve con el contenido del body parseado como JSON  
           .then( data => setItems(data) ) // data es el contenido del body parseado como JSON
           .catch( error => console.log(error) ) // error es el error que se produjo en la petición
-    }, [] )
+    }, [] ) // array de dependencias, si esta vacío se ejecuta solo cuando se monta el componente
 
 
 
