@@ -1,6 +1,7 @@
 import { Button } from '@material-tailwind/react';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Banner from '../components/Banner';
 
 const DetailPage = () => {
 
@@ -29,6 +30,9 @@ const DetailPage = () => {
 
   return (
     <div>
+        <Banner bgImage={'https://images.pexels.com/photos/372851/pexels-photo-372851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}>
+            <h1 className='text-4xl font-bold text-white'>Detalle de producto</h1>
+        </Banner>
         <p>Id pasado por parámetro: { id }</p>
 
         {

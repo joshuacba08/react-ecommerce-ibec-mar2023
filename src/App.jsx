@@ -13,7 +13,7 @@ const BrowserRouter = createBrowserRouter([
   // Aqui van las rutas de la aplicacion
   // ruta exacta
   {
-    path: "/",
+    path: "/", // ruta raiz de la aplicacion
     element: <Home />,
   },
   {
