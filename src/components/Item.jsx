@@ -1,3 +1,6 @@
+import { useContext } from "react"; // importo useContext para poder usar el contexto
+import { CartContext } from "../context/CartContext";
+
 import {
   Card,
   CardHeader,
@@ -6,11 +9,13 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import { propTypeChildren } from "@material-tailwind/react/types/components/timeline";
 
 import { Link } from "react-router-dom";
 
 const Item = ({ product }) => {
+
+  const { addItem } = useContext(CartContext); // desestructuro el contexto para usarlo en el componente
+
   return (
     <Card className="w-96">
       <CardHeader shadow={false} floated={false} className="h-96">
@@ -40,6 +45,7 @@ const Item = ({ product }) => {
           ripple={false}
           fullWidth={true}
           className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100"
+          onClick={ () => { addItem(product, 1) } }
         >
           Add to Cart
         </Button>

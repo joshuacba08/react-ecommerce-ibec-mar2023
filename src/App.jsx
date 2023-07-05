@@ -1,41 +1,36 @@
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter,
+  Routes,
+  Route,
 } from "react-router-dom";
 import Header from "./layouts/Header";
 import './App.css'
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
 import DetailPage from "./pages/DetailPage";
+import { CartProvider } from "./context/CartContext";
+import CartPage from "./pages/CartPage";
 
 
-const BrowserRouter = createBrowserRouter([
-  // Aqui van las rutas de la aplicacion
-  // ruta exacta
-  {
-    path: "/", // ruta raiz de la aplicacion
-    element: <Home />,
-  },
-  {
-    path: "/products",
-    element: <ProductsPage />,
-  },
-  { // Esta ruta es dinamica
-    path: "/products/:id", // :id es un parametro dinamico
-    element:<DetailPage />,
-  }
-]);
 
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <RouterProvider router={BrowserRouter} />
-      
+    <CartProvider>
+      <BrowserRouter>
+        
+        <Header /> {/* Header fuera de las rutas para que se muestre en todas las páginas */}
 
-    </>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<DetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+        
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 

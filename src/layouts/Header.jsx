@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CartWidget from "../components/CartWidget"
 
 
@@ -15,14 +16,16 @@ const Header = () => {
         <nav>
           <ul className="flex items-center gap-6">
             <li>
-              <a href="">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="">Products</a>
+              <Link to="/products">Products</Link>
             </li>
 
             <li>
-              <CartWidget />
+              <Link to="/cart">
+                <CartWidget />
+              </Link>
             </li>
           </ul>
         </nav>
